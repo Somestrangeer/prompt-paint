@@ -1,17 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>prompt-paint</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/og-image.png" />
-  </head>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiagramCraft</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">DiagramCraft</div>
+            <div class="nav-links">
+                <a href="#create" class="nav-link">Создать диаграмму</a>
+                <a href="#tips" class="nav-link">Подсказки</a>
+            </div>
+        </nav>
+    </header>
 
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <main>
+        <section id="create" class="create-section">
+            <div class="container">
+                <h2>Создайте свою диаграмму</h2>
+                <textarea 
+                    class="prompt-input" 
+                    placeholder="Опишите вашу диаграмму..."
+                ></textarea>
+                <div class="diagram-area">
+                    <p>Здесь появится ваша диаграмма</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips" class="tips-section">
+            <div class="container">
+                <h2>Как составить эффективный промпт</h2>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <span class="example-label">Пример 1</span>
+                        <p>Создай диаграмму последовательности для процесса авторизации пользователя</p>
+                        <div class="example-image">
+                            <p>Результат диаграммы</p>
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <span class="example-label">Пример 2</span>
+                        <p>Построй блок-схему алгоритма сортировки массива</p>
+                        <div class="example-image">
+                            <p>Результат диаграммы</p>
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <span class="example-label">Пример 3</span>
+                        <p>Нарисуй ER-диаграмму для системы управления библиотекой</p>
+                        <div class="example-image">
+                            <p>Результат диаграммы</p>
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <span class="example-label">Пример 4</span>
+                        <p>Сгенерируй диаграмму классов для игры в шахматы</p>
+                        <div class="example-image">
+                            <p>Результат диаграммы</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
