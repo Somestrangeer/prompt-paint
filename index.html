@@ -21,10 +21,36 @@
         <section id="create" class="create-section">
             <div class="container">
                 <h2>Создайте свою диаграмму</h2>
-                <textarea 
-                    class="prompt-input" 
-                    placeholder="Опишите вашу диаграмму..."
-                ></textarea>
+                <form class="create-form" id="diagramForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="filename">Имя файла</label>
+                            <input 
+                                type="text" 
+                                id="filename" 
+                                name="filename" 
+                                class="form-input" 
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="diagramType">Тип диаграммы</label>
+                            <input 
+                                type="text" 
+                                id="diagramType" 
+                                name="diagramType" 
+                                class="form-input" 
+                                required
+                            >
+                        </div>
+                    </div>
+                    <textarea 
+                        class="prompt-input" 
+                        name="prompt"
+                        placeholder="Опишите вашу диаграмму..."
+                        required
+                    ></textarea>
+                </form>
                 <div class="diagram-area">
                     <p>Здесь появится ваша диаграмма</p>
                 </div>

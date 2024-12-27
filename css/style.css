@@ -69,16 +69,54 @@ body {
 .create-section {
     padding-top: 6rem;
     padding-bottom: 5rem;
+    background: linear-gradient(180deg, var(--primary) 0%, #2C2C2C 100%);
 }
 
 .create-section .container {
-    background-color: var(--primary);
+    background-color: transparent;
 }
 
 .create-section h2 {
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 1.5rem;
+}
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--secondary);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary);
+    border: 1px solid rgba(236, 236, 236, 0.2);
+    color: var(--secondary);
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent);
 }
 
 .prompt-input {
