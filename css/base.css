@@ -4,6 +4,12 @@
     --accent: #8B7355;
 }
 
+:root[data-theme="light"] {
+    --primary: #ffffff;
+    --secondary: #131312;
+    --accent: #8B7355;
+}
+
 * {
     margin: 0;
     padding: 0;
