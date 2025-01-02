@@ -1,6 +1,5 @@
 .tips-section {
     padding: 5rem 0;
-    background-color: var(--primary);
 }
 
 .tips-section h2 {
@@ -8,7 +7,6 @@
     font-weight: 300;
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--secondary);
 }
 
 .examples-grid {
@@ -18,16 +16,10 @@
 }
 
 .example-card {
-    background-color: var(--background-secondary);
+    background-color: rgba(236, 236, 236, 0.05);
     padding: 1.5rem;
-    border: 1px solid rgba(236, 236, 236, 0.1);
+    border: 1px solid rgba(236, 236, 236, 0.2);
     border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.example-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
 }
 
 .example-label {
@@ -41,11 +33,11 @@
 
 .example-image {
     margin-top: 1rem;
-    background-color: var(--primary);
+    background-color: rgba(19, 19, 18, 0.5);
     border-radius: 8px;
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-muted);
+    color: rgba(236, 236, 236, 0.6);
 }
