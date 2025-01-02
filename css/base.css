@@ -1,13 +1,17 @@
 :root {
-    --primary: #131312;
-    --secondary: #ececec;
-    --accent: #8B7355;
+    --primary: #1A1F2C;
+    --secondary: #FFFFFF;
+    --accent: #D6BCFA;
+    --background-secondary: #221F26;
+    --text-muted: #8A898C;
 }
 
 :root[data-theme="light"] {
-    --primary: #ffffff;
-    --secondary: #131312;
-    --accent: #8B7355;
+    --primary: #FFFFFF;
+    --secondary: #1A1F2C;
+    --accent: #D6BCFA;
+    --background-secondary: #F1F0FB;
+    --text-muted: #8E9196;
 }
 
 * {
