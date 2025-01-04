@@ -5,9 +5,9 @@
 }
 
 :root[data-theme="light"] {
-    --primary: #ffffff;
-    --secondary: #131312;
-    --accent: #8B7355;
+    --primary: #F1F0FB;
+    --secondary: #2A2B2E;
+    --accent: #6D5D9B;
 }
 
 * {
