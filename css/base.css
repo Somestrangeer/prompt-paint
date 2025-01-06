@@ -2,6 +2,7 @@
     --primary: #131312;
     --secondary: #ececec;
     --accent: #8B7355;
+    --transition-duration: 0.5s;
 }
 
 :root[data-theme="light"] {
@@ -25,5 +26,23 @@ body {
     background-color: var(--primary);
     color: var(--secondary);
     line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color var(--transition-duration) ease,
+                color var(--transition-duration) ease;
+}
+
+/* Добавляем задержку для всего контента, кроме header */
+main, 
+footer,
+.create-section,
+.tips-section,
+.create-form,
+.diagram-area,
+.form-input,
+.prompt-input {
+    transition: all var(--transition-duration) ease !important;
+}
+
+/* Header получает отдельную задержку */
+.header {
+    transition: all var(--transition-duration) ease var(--transition-duration) !important;
 }
