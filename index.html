@@ -37,15 +37,20 @@
                         <div class="form-group">
                             <div class="label-with-help">
                                 <label for="diagramType">Тип диаграммы</label>
-                                <div class="help-icon" data-tooltip="Доступные типы диаграмм: sequence, flowchart, er-diagram, class">?</div>
+                                <div class="help-icon" data-tooltip="Доступные типы диаграмм">?</div>
                             </div>
-                            <input 
-                                type="text" 
+                            <select 
                                 id="diagramType" 
                                 name="diagramType" 
-                                class="form-input" 
+                                class="form-select" 
                                 required
                             >
+                                <option value="">Выберите тип</option>
+                                <option value="sequence">Диаграмма последовательности</option>
+                                <option value="flowchart">Блок-схема</option>
+                                <option value="er-diagram">ER-диаграмма</option>
+                                <option value="class">Диаграмма классов</option>
+                            </select>
                         </div>
                     </div>
                     <textarea 
