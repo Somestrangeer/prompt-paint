@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 diagramType: form.diagramType.value,
                 prompt: form.prompt.value
             });
+            
+            // После успешной генерации диаграммы активируем кнопку
+            downloadButton.disabled = false;
         });
     }
 
@@ -42,6 +45,18 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 root.classList.remove('theme-transitioning');
             }, 1000); // Время должно быть больше общей длительности анимации
+        });
+    }
+
+    // Обработка кнопки скачивания
+    const downloadButton = document.getElementById('downloadButton');
+
+    if (downloadButton) {
+        downloadButton.addEventListener('click', function() {
+            if (!this.disabled) {
+                console.log('Запрос на скачивание файла');
+                // Здесь будет логика скачивания файла
+            }
         });
     }
 
