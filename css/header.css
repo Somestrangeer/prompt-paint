@@ -28,14 +28,21 @@
     align-items: center;
 }
 
-.nav-link {
-    color: var(--secondary);
-    text-decoration: none;
-    transition: color 0.3s ease;
+.perspective-wrapper {
+    perspective: 1000px;
 }
 
-.nav-link:hover {
-    color: var(--accent);
+.nav-link-rotating {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-link-rotating:hover {
+    transform: rotateX(360deg);
 }
 
 .theme-toggle {

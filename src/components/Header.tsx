@@ -17,6 +17,20 @@ export const Header = () => {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
   };
 
+  const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+    <motion.div
+      className="nav-link-container perspective-wrapper"
+      whileHover={{ scale: 1.05 }}
+    >
+      <Link 
+        to={href}
+        className="nav-link-rotating"
+      >
+        {children}
+      </Link>
+    </motion.div>
+  );
+
   return (
     <motion.header 
       initial={{ y: -100 }}
@@ -53,17 +67,3 @@ export const Header = () => {
     </motion.header>
   );
 };
-
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <motion.div
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-  >
-    <Link 
-      to={href}
-      className="text-secondary hover:text-accent transition-colors duration-300 text-lg"
-    >
-      {children}
-    </Link>
-  </motion.div>
-);
