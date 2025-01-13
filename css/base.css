@@ -31,12 +31,45 @@ body {
 }
 
 @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
     from {
         opacity: 0;
+        transform: translateX(-20px);
     }
     to {
         opacity: 1;
+        transform: translateX(0);
     }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-in {
+    opacity: 0;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.animate-fade-up {
+    opacity: 0;
+    animation: slideUp 0.5s ease-out forwards;
 }
 
 *, *::before, *::after {
@@ -54,32 +87,35 @@ textarea:focus {
     transition: none;
 }
 
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Добавляем задержки для последовательной анимации */
+.create-form > * {
+    animation-delay: calc(var(--animation-order, 0) * 0.1s);
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.examples-grid > * {
+    animation-delay: calc(var(--animation-order, 0) * 0.1s);
 }
 
-.animate-slide-up {
-    animation: slideUp 0.5s ease-out forwards;
+/* Анимации при наведении */
+.nav-link,
+.submit-button,
+.download-button,
+.example-card {
+    transition: transform 0.3s ease;
 }
 
-.animate-slide-in {
-    animation: slideIn 0.5s ease-out forwards;
+.nav-link:hover,
+.submit-button:hover,
+.download-button:not(:disabled):hover,
+.example-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Анимация для подсказок */
+.help-icon {
+    transition: transform 0.3s ease;
+}
+
+.help-icon:hover {
+    transform: scale(1.1);
 }

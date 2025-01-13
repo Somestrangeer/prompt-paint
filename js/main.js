@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Анимация при скролле
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.animate-fade-up, .animate-fade-in, .animate-slide-in');
+        
+        elements.forEach((element, index) => {
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.top <= window.innerHeight - 100;
+            
+            if (isVisible) {
+                element.style.setProperty('--animation-order', index);
+                element.style.visibility = 'visible';
+                element.style.animationPlayState = 'running';
+            }
+        });
+    };
+
+    // Инициализация анимаций
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Запускаем первую проверку
+
     // Обработка формы
     const form = document.getElementById('diagramForm');
     if (form) {
@@ -19,11 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
     const root = document.documentElement;
     
-    // Проверяем сохраненную тему или системные настройки
     const savedTheme = localStorage.getItem('theme') || 
                       (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     
-    // Устанавливаем начальную тему
     root.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
     console.log('Initial theme:', savedTheme);
@@ -33,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const currentTheme = root.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
-            // Добавляем класс для анимации
             root.classList.add('theme-transitioning');
             
             console.log('Switching theme from', currentTheme, 'to', newTheme);
@@ -41,10 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', newTheme);
             updateThemeIcon(newTheme);
             
-            // Удаляем класс после завершения анимации
             setTimeout(() => {
                 root.classList.remove('theme-transitioning');
-            }, 1000); // Время должно быть больше общей длительности анимации
+            }, 1000);
         });
     }
 
@@ -55,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         downloadButton.addEventListener('click', function() {
             if (!this.disabled) {
                 console.log('Запрос на скачивание файла');
-                // Здесь будет логика скачивания файла
             }
         });
     }

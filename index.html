@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header animate-slide-in">
         <nav class="nav">
-            <div class="logo">DiagramCraft</div>
-            <div class="nav-links">
+            <div class="logo animate-fade-up">DiagramCraft</div>
+            <div class="nav-links animate-fade-in">
                 <a href="#create" class="nav-link">Создать диаграмму</a>
                 <a href="#tips" class="nav-link">Подсказки</a>
                 <button id="themeToggle" class="theme-toggle">🌙</button>
@@ -19,12 +19,12 @@
     </header>
 
     <main>
-        <section id="create" class="create-section">
+        <section id="create" class="create-section animate-fade-up">
             <div class="container">
-                <h2>Создайте свою диаграмму</h2>
-                <form class="create-form" id="diagramForm">
+                <h2 class="animate-slide-in">Создайте свою диаграмму</h2>
+                <form class="create-form animate-fade-in" id="diagramForm">
                     <div class="form-row">
-                        <div class="form-group">
+                        <div class="form-group animate-slide-in">
                             <label for="filename">Имя файла</label>
                             <input 
                                 type="text" 
@@ -34,7 +34,7 @@
                                 required
                             >
                         </div>
-                        <div class="form-group">
+                        <div class="form-group animate-slide-in">
                             <div class="label-with-help">
                                 <label for="diagramType">Тип диаграммы</label>
                                 <div class="help-icon" data-tooltip="Доступные типы диаграмм">?</div>
@@ -54,14 +54,14 @@
                         </div>
                     </div>
                     <textarea 
-                        class="prompt-input" 
+                        class="prompt-input animate-fade-in" 
                         name="prompt"
                         placeholder="Опишите вашу диаграмму..."
                         required
                     ></textarea>
-                    <button type="submit" class="submit-button">Создать диаграмму</button>
+                    <button type="submit" class="submit-button animate-fade-up">Создать диаграмму</button>
                 </form>
-                <div class="diagram-area">
+                <div class="diagram-area animate-fade-in">
                     <div class="diagram-content">
                         <p>Здесь появится ваша диаграмма</p>
                         <button id="downloadButton" class="download-button" disabled>
@@ -73,32 +73,32 @@
             </div>
         </section>
 
-        <section id="tips" class="tips-section">
+        <section id="tips" class="tips-section animate-fade-up">
             <div class="container">
-                <h2>Как составить эффективный промпт</h2>
+                <h2 class="animate-slide-in">Как составить эффективный промпт</h2>
                 <div class="examples-grid">
-                    <div class="example-card">
+                    <div class="example-card animate-fade-up">
                         <span class="example-label">Пример 1</span>
                         <p>Создай диаграмму последовательности для процесса авторизации пользователя</p>
                         <div class="example-image">
                             <p>Результат диаграммы</p>
                         </div>
                     </div>
-                    <div class="example-card">
+                    <div class="example-card animate-fade-up">
                         <span class="example-label">Пример 2</span>
                         <p>Построй блок-схему алгоритма сортировки массива</p>
                         <div class="example-image">
                             <p>Результат диаграммы</p>
                         </div>
                     </div>
-                    <div class="example-card">
+                    <div class="example-card animate-fade-up">
                         <span class="example-label">Пример 3</span>
                         <p>Нарисуй ER-диаграмму для системы управления библиотекой</p>
                         <div class="example-image">
                             <p>Результат диаграммы</p>
                         </div>
                     </div>
-                    <div class="example-card">
+                    <div class="example-card animate-fade-up">
                         <span class="example-label">Пример 4</span>
                         <p>Сгенерируй диаграмму классов для игры в шахматы</p>
                         <div class="example-image">
@@ -110,7 +110,7 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer animate-fade-up">
         <div class="footer-content">
             <div class="footer-text">
                 <p>© 2025 DiagramCraft. Все права защищены.</p>
