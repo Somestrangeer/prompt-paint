@@ -20,6 +20,9 @@
     padding: 1.5rem;
     border: 1px solid rgba(236, 236, 236, 0.2);
     border-radius: 8px;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease;
+    perspective: 1000px;
 }
 
 .example-label {
