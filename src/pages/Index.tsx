@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Header } from "../components/Header";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const Index = () => {
   const [prompt, setPrompt] = useState("");
@@ -24,6 +24,25 @@ const Index = () => {
         duration: 0.5
       }
     }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = (y - centerY) / 20;
+    const rotateY = -(x - centerX) / 20;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
   };
 
   return (
@@ -89,10 +108,14 @@ const Index = () => {
             {examples.map((example, index) => (
               <motion.div
                 key={index}
-                className="bg-secondary/5 backdrop-blur-sm rounded-lg p-6 border border-secondary/20"
+                className="bg-secondary/5 backdrop-blur-sm rounded-lg p-6 border border-secondary/20 transition-all duration-300"
                 variants={itemVariants}
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.3 }}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transition: 'transform 0.1s ease'
+                }}
               >
                 <div className="mb-4">
                   <span className="text-accent text-sm uppercase tracking-wider">
