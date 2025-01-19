@@ -98,6 +98,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Copy button functionality
+    document.querySelectorAll('.copy-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const code = this.getAttribute('data-code');
+            navigator.clipboard.writeText(code).then(() => {
+                // Visual feedback
+                const originalColor = button.style.color;
+                button.style.color = '#8B7355';
+                setTimeout(() => {
+                    button.style.color = originalColor;
+                }, 200);
+            });
+        });
+    });
+
     function updateThemeIcon(theme) {
         if (themeToggle) {
             themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
