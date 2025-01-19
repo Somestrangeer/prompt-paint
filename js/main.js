@@ -42,35 +42,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Обработка формы и модального окна
+    // Обработка формы
     const form = document.getElementById('diagramForm');
-    const modal = document.getElementById('createModal');
-    const closeModalBtn = document.getElementById('closeModal');
-    
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            modal.style.display = 'flex';
             console.log('Форма отправлена', {
                 filename: form.filename.value,
                 diagramType: form.diagramType.value,
                 prompt: form.prompt.value
             });
+            
+            // После успешной генерации диаграммы активируем кнопку
+            downloadButton.disabled = false;
         });
     }
-
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-    }
-
-    // Закрытие модального окна при клике вне его
-    window.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
 
     // Переключение темы
     const themeToggle = document.getElementById('themeToggle');
